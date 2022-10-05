@@ -1,5 +1,5 @@
 <?php
-
+// php7.4 -d display_errors -d error_reporting=E_ALL art-sites.ru/public_html/_build/build.transport.php
 $mtime = microtime();
 $mtime = explode(' ', $mtime);
 $mtime = $mtime[1] + $mtime[0];

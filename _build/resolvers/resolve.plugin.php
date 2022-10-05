@@ -7,13 +7,13 @@ if ($transport->xpdo) {
     $modx =& $transport->xpdo;
     /** @var miniShop2 $miniShop2 */
     if (!$miniShop2 = $modx->getService('miniShop2')) {
-        $modx->log(modX::LOG_LEVEL_ERROR, '[msplColor] Could not load miniShop2');
+        $modx->log(modX::LOG_LEVEL_ERROR, '[msColorPicker] Could not load miniShop2');
 
         return false;
     }
     if (!property_exists($miniShop2, 'version') || version_compare($miniShop2->version, '2.4.0-beta2', '<')) {
         $modx->log(modX::LOG_LEVEL_ERROR,
-            '[msplColor] You need to upgrade miniShop2 at least to version 2.4.2-beta2');
+            '[msColorPicker] You need to upgrade miniShop2 at least to version 2.4.2-beta2');
 
         return false;
     }
@@ -22,7 +22,7 @@ if ($transport->xpdo) {
     $manager = $modx->getManager();
     switch ($options[xPDOTransport::PACKAGE_ACTION]) {
         case xPDOTransport::ACTION_INSTALL:
-            $miniShop2->addPlugin('msplColor', '{core_path}components/msplcolor/index.php');
+            $miniShop2->addPlugin('msColorPicker', '{core_path}components/mscolorpicker/index.php');
             $miniShop2->loadMap();
 
             $manager->alterField('msProductData', 'color');
@@ -34,7 +34,7 @@ if ($transport->xpdo) {
         //case xPDOTransport::ACTION_UPGRADE:
 
         case xPDOTransport::ACTION_UNINSTALL:
-            $miniShop2->removePlugin('msplColor');
+            $miniShop2->removePlugin('msColorPicker');
             unset($modx->map['msProductData']);
             $modx->loadClass('msProductData', $miniShop2->config['modelPath'] . 'minishop2/');
 
