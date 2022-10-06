@@ -1,4 +1,4 @@
-Changelog for msplColor.
+Changelog for msColorPicker.
 
 1.0.0-pl
 ==============

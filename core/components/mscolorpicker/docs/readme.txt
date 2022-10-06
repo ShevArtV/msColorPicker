@@ -1,5 +1,5 @@
 --------------------
-miniShop2
+msColorPicker
 --------------------
-Author: Vasiliy Naumkin <bezumkin@yandex.ru>
+Author: Shevchenko Artur <shev.art.v@yandex.ru>
 --------------------
